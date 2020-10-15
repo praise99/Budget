@@ -144,7 +144,15 @@ main{
 
 .add-btn{
     margin-left: 0.4rem;
-    padding: 0.7rem;
+    font-size: 35px;
+    width: 40px;
+    background: white;
+    border: none;
+    color: #28B9B5;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
 }
 .add-btn:focus { outline: none; }
 .add-btn:active { transform: translateY(2px); }

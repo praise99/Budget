@@ -108,9 +108,6 @@ var budgetController=(function(){
                 totalExp:data.total.exp,
                 percentage:data.percentage
             }
-        },
-        testing:function(){
-            console.log(data)
         }
     }
 
@@ -343,7 +340,6 @@ var controller=(function(budgetctrl,uictrl){
     }
     return{
         init:function(){
-            console.log("APPLICATION HAS STARTED");
             uictrl.displayMonth();
             uictrl.displayBudget({
                 budget:0,

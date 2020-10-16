@@ -205,11 +205,13 @@ var uiController=(function(){
             }
             document.querySelector(domStrings.incomeLabel).textContent=formatNumber(obj.totalInc,"inc");
             document.querySelector(domStrings.expenseLabel).textContent=formatNumber(obj.totalExp,"exp");
+            
             if(obj.percentage>0){
                 document.querySelector(domStrings.percentageLabel).textContent=obj.percentage + "%";
             }else{
                 document.querySelector(domStrings.percentageLabel).textContent="--";
             }
+            
         },
         displayPercentages:function(percentage){
             var fields=document.querySelectorAll(domStrings.itemPercentage);
@@ -275,12 +277,16 @@ var controller=(function(budgetctrl,uictrl){
 
         //2.return the budget
         var budget=budgetctrl.getBudget();
+        
 
         //3. Diplay the budget
         uictrl.displayBudget(budget);
         
+        
+        
 
     }
+    
      var updatePercentages=function(){
          //calculate percentage
          budgetctrl.calculatePercentage();
@@ -338,6 +344,8 @@ var controller=(function(budgetctrl,uictrl){
 
         }
     }
+    
+    
     return{
         init:function(){
             uictrl.displayMonth();
@@ -354,3 +362,12 @@ var controller=(function(budgetctrl,uictrl){
 
 
 controller.init();
+
+//service worker
+if('serviceWorker' in navigator){
+    navigator.serviceWorker.register("/sw.js")
+      .then(reg => console.log('service worker is registered', reg))
+      .catch(err => console.log('service worker is not registered', err));
+  }
+
+
